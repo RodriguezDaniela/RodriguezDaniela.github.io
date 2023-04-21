@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2023 a las 04:21:58
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 21-04-2023 a las 04:24:42
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,7 +45,11 @@ INSERT INTO `albumes` (`id`, `artista_id`, `nombre`) VALUES
 (4, 4, 'Plastic Beach'),
 (5, 8, 'Fine Line'),
 (6, 5, 'Origins'),
-(7, 10, 'Creatures of the Night');
+(7, 10, 'Creatures of the Night'),
+(8, 11, 'Dale'),
+(9, 2, 'Hollywood\'s Bleeding'),
+(10, 7, 'Loud'),
+(11, 9, 'The Fame Monster');
 
 -- --------------------------------------------------------
 
@@ -83,7 +88,7 @@ INSERT INTO `artistas` (`id`, `nombre`, `imagen`) VALUES
 (6, 'Bts', 'bts.jpg'),
 (7, 'rihanna', 'rihanna.jpg'),
 (8, 'harry styles', 'harrystyles.jpg\r\n'),
-(9, 'trey parker', 'treyparker.jpg'),
+(9, 'lady gaga', 'ladygaga.jpg'),
 (10, 'kiss', 'kiss.jpg'),
 (11, 'pitbull', 'pitbull.jpg');
 
@@ -102,6 +107,13 @@ CREATE TABLE `canciones` (
   `fecha` date NOT NULL,
   `disponible` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`id`, `nombre`, `artista_id`, `duracion`, `genero_id`, `fecha`, `disponible`) VALUES
+(1, 'Easier', 3, '02:57:00', 6, '2019-05-23', 100);
 
 -- --------------------------------------------------------
 
@@ -201,6 +213,16 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `usuario`, `telefono`, `membresia_id`) VALUES
+(1, 'Daniela', 'drodriguezzuniga01634@gmail.com', '01634', 'daniela_575', '6674846072', 3),
+(2, 'Hasly', 'Kamy122006@gmail.com', 'mariposa', 'Mariposita', '6675303387', 1),
+(4, 'Evelyn', 'evelynsita00@gmail.com', 'twentypilots', 'pug47', '6677908843', 1),
+(5, 'Eduardo', 'eduardito01634@gmial.com', '012345678910', 'eduardoelpillo', '66719323', 2);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -283,7 +305,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `albumes`
 --
 ALTER TABLE `albumes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `album_canciones`
@@ -301,7 +323,7 @@ ALTER TABLE `artistas`
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritas`
@@ -337,7 +359,7 @@ ALTER TABLE `playlist_canciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
