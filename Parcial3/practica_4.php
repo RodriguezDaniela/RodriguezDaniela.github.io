@@ -17,24 +17,48 @@ $pregunta8 =$_POST["pregunta8"];
 $pregunta9 =$_POST["pregunta9"];
 $pregunta10 =$_POST["pregunta10"];*/
 
-echo"<h3> Pregunta 1: " . $pregunta1."<h3>";
+
+echo"<h2> Alumno 1: " . $nombre."</h2>";
+
+echo"<h3> Resultado del examen PHP</h3><hr>";
+
+
+echo"<h3> Pregunta 1: " . $pregunta1."</h3>";
 
 if($pregunta1 == "B"){
     $calificacion ++;
-  //  echo"<img src=' imagen   ' width='3%'>";
+    echo"<img src='correcta.png' width='5%'>";
 }else{
     echo"<p>Respuesta es (B)</p>";
-   // echo"<img src=' imagen incorrecta' width='3%'><hr>";
+    echo"<img src=' imagen incorrecta' width='3%'><hr>";
 }
 
+echo"<h3> Pregunta 2: " . $pregunta1."</h3>";
+
+if($pregunta1 == "A"){
+    $calificacion ++;
+    echo"<img src='correcta.png' width='5%'>";
+}else{
+    echo"<p>Respuesta es (A)</p>";
+    echo"<img src=' imagen incorrecta' width='3%'><hr>";
+}
+
+
+
+
+
+
+
+
+
 if($calificacion >= 0 && $calificacion <=5){
-    echo "<h3> Calificacion:". $calificacion.", No conoces la serie </h3>";
-   // echo"<img src=' imagen ' width='10%'><hr>";
+    echo "<h3> Calificacion: ". $calificacion.", No conoces la serie </h3>";
+    echo"<img src=' imagen ' width='10%'><hr>";
 }else if($calificacion >=6 && $calificacion<=8){
-    echo "<h3> Calificacion:". $calificacion.", Conoces la serie </h3>";
-   // echo"<img src=' imagen ' width='10%'><hr>";
+    echo "<h3> Calificacion: ". $calificacion.", Conoces la serie </h3>";
+    echo"<img src=' imagen ' width='10%'><hr>";
 }else if($calificacion >=9 && $calificacion<=10){
-    echo "<h3> Calificacion:". $calificacion.", Eres fan de la serie </h3>";
-   // echo"<img src=' imagen ' width='10%'><hr>";
+    echo "<h3> Calificacion: ". $calificacion.", Eres fan de la serie </h3>";
+     echo"<img src='blitzo.png' width='10%'><hr>";
 }
 ?>
