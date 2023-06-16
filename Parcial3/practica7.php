@@ -24,11 +24,12 @@
 </head>
 <body>
     <?php
-        $colores = ["#e69138", "#ffd966", "#8fce00", "#8e7cc3"];
+        $colores = ["#a8e6cf", "#ffd3b6", "#ff8b94", "#dcedc1"];
     ?>
      <div class="container">
         <h1>Práctica 7 - Tablero de serpientes y escaleras</h1><hr>
-            <form action="">
+            <form action="practica7.php" method="POST">
+                <input type="submit" value="Jugar" class="btn btn-sucess" style="background-color: #ffaaa5"><hr>
                 <div class="row">
                 <?php
                     for($i=100; $i>0; $i--){
