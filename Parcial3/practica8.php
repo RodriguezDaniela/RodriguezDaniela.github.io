@@ -27,8 +27,8 @@
                 $carta1 = $_POST["carta1"];
                 $carta2 = $_POST["carta2"];
                 //aqui empieza la logica del juego
-               
-
+                $carta = rand(1,54);
+                echo "<h2 style= background-color: white> Carta dada <img src='fotos_loteria/".$carta.".jpeg' class='img-fluid' width='100px'></h2>";
              }else{
                 $carta1 = [];
                 $total = 0;
